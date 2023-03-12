@@ -133,9 +133,7 @@ The minimum required version is [CMake 3.19](https://cmake.org/files/v3.19/ "Dow
 ### Size
 ![Github code size](https://img.shields.io/github/languages/code-size/FragaShop/FragaShopClient.svg "Code size")
 ![Github repository size](https://img.shields.io/github/repo-size/FragaShop/FragaShopClient.svg "Repository size")
-![Github file count](https://img.shields.io/github/directory-file-count/FragaShop/FragaShopClient.svg "File count")
-![Github .cpp file count](https://img.shields.io/github/directory-file-count/FragaShop/FragaShopClient/*.svg?color=blue&extension=cpp&label=.cpp%20files ".cpp file count")
-![Github .qml file count](https://img.shields.io/github/directory-file-count/FragaShop/FragaShopClient/*.svg?color=blue&extension=qml&label=.qml%20files ".qml file count")
+![Github file count](https://img.shields.io/tokei/lines/github/FragaShop/FragaShopClient?label=lines%20of%20code "Lines of code")
 
 
 ## License
