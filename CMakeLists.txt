@@ -7,7 +7,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_ANDROID_BUILD_ALL_ABIS OFF)
 
-find_package(Qt6 6.4 COMPONENTS Quick REQUIRED)
+find_package(Qt6 6.4 COMPONENTS Quick Svg REQUIRED)
 
 # The C/C++ source files
 set(PROJECT_SOURCES
@@ -60,8 +60,15 @@ set_target_properties(appFragaShop PROPERTIES
     QT_ANDROID_PACKAGE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/android
 )
 
+
+if (ANDROID)
+    include(${ANDROID_SDK_ROOT}/android_openssl/CMakeLists.txt)
+    set_target_properties(appFragaShop PROPERTIES QT_ANDROID_EXTRA_LIBS "${ANDROID_EXTRA_LIBS}")
+endif()
+
+
 target_link_libraries(appFragaShop
-    PRIVATE Qt6::Quick
+    PRIVATE Qt6::Quick Qt6::Svg
 )
 
 install(TARGETS appFragaShop
