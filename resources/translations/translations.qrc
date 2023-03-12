@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/translations">
+        <file>FragaShop_en_US.ts</file>
+    </qresource>
+</RCC>

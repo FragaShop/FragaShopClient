@@ -1,0 +1,37 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>icons/app/appIcon.png</file>
+        <file>icons/app/appIcon.svg</file>
+        <file>icons/app/appIcon_small.png</file>
+        <file>icons/menu/menu.svg</file>
+        <file>icons/actions/filter.svg</file>
+        <file>icons/fashion/blouse.svg</file>
+        <file>icons/fashion/blouse-sleeves.svg</file>
+        <file>icons/fashion/boots.svg</file>
+        <file>icons/fashion/bra.svg</file>
+        <file>icons/fashion/cap.svg</file>
+        <file>icons/fashion/coat.svg</file>
+        <file>icons/fashion/coat-hooded.svg</file>
+        <file>icons/fashion/dress.svg</file>
+        <file>icons/fashion/dress-sleeves.svg</file>
+        <file>icons/fashion/flipflops.svg</file>
+        <file>icons/fashion/glasses.svg</file>
+        <file>icons/fashion/hat-men.svg</file>
+        <file>icons/fashion/hat-winter.svg</file>
+        <file>icons/fashion/hat-women.svg</file>
+        <file>icons/fashion/heels.svg</file>
+        <file>icons/fashion/pants.svg</file>
+        <file>icons/fashion/pullover.svg</file>
+        <file>icons/fashion/purse.svg</file>
+        <file>icons/fashion/shirt-sleeves.svg</file>
+        <file>icons/fashion/shoes.svg</file>
+        <file>icons/fashion/shorts.svg</file>
+        <file>icons/fashion/shorts-swimming.svg</file>
+        <file>icons/fashion/suit.svg</file>
+        <file>icons/fashion/suitcase.svg</file>
+        <file>icons/fashion/sweater.svg</file>
+        <file>icons/fashion/tennis.svg</file>
+        <file>icons/fashion/tie.svg</file>
+        <file>icons/fashion/underpants.svg</file>
+    </qresource>
+</RCC>
