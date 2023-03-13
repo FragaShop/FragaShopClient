@@ -40,6 +40,18 @@ set(QML_UI_SOURCES
     src/ui/qml/Components/ApplicationWindowHeader.qml
     src/ui/qml/Components/Pages/PageHome.qml
     src/ui/qml/Components/Pages/PageTest.qml
+    src/ui/qml/Components/Utils/PriceTag.qml
+    src/ui/qml/Components/Controls/ComboBox.qml
+    src/ui/qml/Components/Controls/RadioButton.qml
+    src/ui/qml/Components/Controls/ScrollBar.qml
+    src/ui/qml/Components/Controls/TextArea.qml
+    src/ui/qml/Components/Controls/TextField.qml
+    src/ui/qml/Components/Controls/+Material/ComboBox.qml
+    src/ui/qml/Components/Controls/+Material/RadioButton.qml
+    src/ui/qml/Components/Controls/+Material/RadioIndicator.qml
+    src/ui/qml/Components/Controls/+Material/ScrollBar.qml
+    src/ui/qml/Components/Controls/+Material/TextArea.qml
+    src/ui/qml/Components/Controls/+Material/TextField.qml
 )
 
 

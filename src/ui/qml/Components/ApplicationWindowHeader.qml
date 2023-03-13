@@ -32,7 +32,7 @@ Pane {
 
         text: qsTr(Qt.application.name)
         font.family: "Dancing Script"
-        font.pointSize: Qt.application.font.pointSize * 10
+        font.pointSize: Qt.application.font.pointSize * 20
         fontSizeMode: Label.Fit
         elide: Label.ElideRight
     }
@@ -104,6 +104,8 @@ Pane {
                 } // ToolButton (delegate)
             } // Repeater
         } // Flow
+
+        ScrollBar.vertical: UI.ScrollBar {}
     } // Flickable
 
     ListModel {
