@@ -41,12 +41,11 @@ Page {
 
                 width: parent.width
                 height: 150
-                source: "https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(~~rectangleProduct.width).arg(~~(rectangleProduct.height * 0.8))
+                // show images only after the Window is shown, but this shouldn't be aware of applicationWindow's existence
+                source: applicationWindow.visible ? ("https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(~~rectangleProduct.width).arg(~~(rectangleProduct.height * 0.8))) : ""
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
                 opacity: 0
-
-                Component.onCompleted: console.log(model.index, source)
 
                 ParallelAnimation {
                     id: animationEnterImage
