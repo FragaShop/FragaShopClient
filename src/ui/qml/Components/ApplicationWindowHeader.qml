@@ -9,7 +9,7 @@ Pane {
 
     signal menuTriggered()
 
-    height: labelStatus.height + 2 + flickableFilters.height
+    height: toolButtonFilter.y + flickableFilters.height + 1
     padding: 0
     Material.elevation: 10
 
@@ -38,43 +38,110 @@ Pane {
     }
 
     ToolButton {
-        id: toolButtonFilter
+        id: toolButtonSearch
 
         x: parent.width - width
         y: toolButtonMenu.y
 
-        icon.source: "qrc:/images/icons/actions/filter.svg"
+        icon.source: "qrc:/images/icons/actions/search.svg"
+    }
+
+    Rectangle {
+        id: rectangleSeparator
+
+        property bool leftTransparent: true
+        property bool rightTransparent: true
+
+        y: toolButtonSearch.y + toolButtonSearch.height + 2
+        width: parent.width
+        height: 1
+
+        gradient: Gradient {
+            orientation: Gradient.Horizontal
+            GradientStop {
+                position: 0.00;
+                color: rectangleSeparator.leftTransparent ? "transparent" : (rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor)
+            }
+            GradientStop {
+                position: 0.25;
+                color: rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor
+            }
+            GradientStop {
+                position: 0.75;
+                color: rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor
+            }
+            GradientStop {
+                position: 1.00;
+                color: rectangleSeparator.rightTransparent ? "transparent" : (rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor)
+            }
+        } // Gradient
+    } // Rectangle
+
+    ToolButton {
+        id: toolButtonFilter
+
+        x: parent.width - width
+        y: rectangleSeparator.y + rectangleSeparator.height
+        z: rectangleFilterFadeLeft.z + 1
+
+        icon.source: "qrc:/images/icons/arrows/chevron_" + (checked ? "less" : "more") + ".svg"
         checkable: true
+    }
+
+    Rectangle {
+        id: rectangleFilterFadeLeft
+
+        x: parent.width - width
+        y: flickableFilters.y
+        z: flickableFilters.z + 1
+        width: toolButtonFilter.width + 10
+        height: toolButtonFilter.height
+
+        gradient: Gradient {
+            orientation: Gradient.Horizontal
+            GradientStop {
+                position: 0.00;
+                color: "transparent"
+            }
+            GradientStop {
+                position: 0.35;
+                color: Material.backgroundColor
+            }
+        } // Gradient
     }
 
     Flickable {
         id: flickableFilters
 
-        y: labelStatus.height + 2 // same as default header height
+        y: toolButtonFilter.y
         width: parent.width
-        height: toolButtonFilter.checked ? y * 5 : 0
+        height: toolButtonFilter.checked ? y * 4 : toolButtonFilter.height
         Behavior on height { NumberAnimation { easing.type: Easing.OutQuint } }
-
-        enabled: height > 0
-        contentWidth: width
+        rightMargin: toolButtonFilter.width
+        contentWidth:  flowFilters.width
         contentHeight: flowFilters.height
         clip: true
 
         Flow {
             id: flowFilters
 
-            width: parent.width
+            width: toolButtonFilter.checked ? flickableFilters.width - flickableFilters.rightMargin : repeaterFilters.count * 36
+            height: toolButtonFilter.checked ? implicitHeight : toolButtonFilter.height
 
             Repeater {
+                id: repeaterFilters
+
                 model: listModelFilters
                 delegate: ToolButton {
                     id: toolButtonDelegate
 
                     implicitWidth: labelFilterName.x + labelFilterName.width + 8
+                    width: toolButtonFilter.checked ? implicitWidth : (2 * imageFilterIcon.x + imageFilterIcon.width)
+                    //Behavior on width { NumberAnimation {} }
                     checkable: true
                     flat: true
+                    clip: true
                     highlighted: checked
-                    onClicked: console.log(width, implicitWidth)
 
                     Image {
                         id: imageFilterIcon

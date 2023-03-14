@@ -5,6 +5,9 @@
         <file>icons/app/appIcon_small.png</file>
         <file>icons/menu/menu.svg</file>
         <file>icons/actions/filter.svg</file>
+        <file>icons/actions/search.svg</file>
+        <file>icons/arrows/chevron_more.svg</file>
+        <file>icons/arrows/chevron_less.svg</file>
         <file>icons/fashion/blouse.svg</file>
         <file>icons/fashion/blouse-sleeves.svg</file>
         <file>icons/fashion/boots.svg</file>
