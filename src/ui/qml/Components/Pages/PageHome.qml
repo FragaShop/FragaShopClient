@@ -19,7 +19,7 @@ Page {
 
         cellWidth: gridViewProducts.width/2 - 6
         cellHeight: 200
-        model: 50
+        model: applicationWindow.visible ? 50 : 0 // show images only after the Window is shown, but this shouldn't be aware of applicationWindow's existence
         delegate: Rectangle {
             id: rectangleProduct
 
@@ -41,8 +41,8 @@ Page {
 
                 width: parent.width
                 height: 150
-                // show images only after the Window is shown, but this shouldn't be aware of applicationWindow's existence
-                source: applicationWindow.visible ? ("https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(~~rectangleProduct.width).arg(~~(rectangleProduct.height * 0.8))) : ""
+
+                source: "https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(~~rectangleProduct.width).arg(~~(rectangleProduct.height * 0.8))
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
                 opacity: 0
