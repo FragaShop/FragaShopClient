@@ -97,6 +97,8 @@ Pane {
         width: toolButtonFilter.width + 10
         height: toolButtonFilter.height
 
+        visible: !toolButtonFilter.checked
+
         gradient: Gradient {
             orientation: Gradient.Horizontal
             GradientStop {
