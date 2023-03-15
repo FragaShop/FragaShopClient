@@ -16,7 +16,9 @@ Pane {
     ToolButton {
         id: toolButtonMenu
 
+        z: itemSearchClip.z + 1
         icon.source: "qrc:/images/icons/menu/menu.svg"
+        icon.color: rectangleSearch.width > (textFieldSearch.width + width)*2 ? Material.dialogColor : Material.foreground
         onClicked: {
             applicationWindowHeader.menuTriggered()
         }
@@ -37,13 +39,60 @@ Pane {
         elide: Label.ElideRight
     }
 
+    Item {
+        id: itemSearchClip
+        width: applicationWindowHeader.width
+        height: toolButtonFilter.y
+        clip: true
+
+        Rectangle {
+            id: rectangleSearch
+
+            x: toolButtonSearch.x + (toolButtonSearch.width - width)/2
+            y: toolButtonSearch.y + (toolButtonSearch.height - height)/2
+            width: toolButtonSearch.checked ? parent.width * 2 : 0
+            Behavior on width { NumberAnimation {} }
+            height: width
+            radius: width/2
+
+            color: Material.accentColor
+            clip: true
+
+            TextField {
+                id: textFieldSearch
+
+                x: parent.width/2 - width - toolButtonSearch.width/2
+                y: (parent.height - height)/2 + 4
+                width: applicationWindowHeader.width - (2 * toolButtonSearch.width)
+
+                enabled: toolButtonSearch.checked && parent.width > toolButtonSearch.width
+                color: Material.dialogColor
+                Material.accent: textFieldSearch.color
+                background: Rectangle {
+                    y: textFieldSearch.height - height - textFieldSearch.bottomPadding + 8
+                    implicitWidth: 120
+                    height: 2
+                    color: textFieldSearch.Material.accentColor
+                }
+            }
+        }
+    }
+
     ToolButton {
         id: toolButtonSearch
 
         x: parent.width - width
         y: toolButtonMenu.y
 
-        icon.source: "qrc:/images/icons/actions/search.svg"
+        icon.source: "qrc:/images/icons/actions/" + (rectangleSearch.width > width/2 ? "clear" : "search") + ".svg"
+        icon.color: rectangleSearch.width > width/2 ? Material.dialogColor : Material.foreground
+        checkable: true
+
+        onCheckedChanged: {
+            if (checked) {
+                textFieldSearch.forceActiveFocus()
+            }
+        }
     }
 
     Rectangle {
