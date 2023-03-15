@@ -32,7 +32,7 @@ Page {
             clip: true
 
             layer.enabled: true
-            layer.effect: OpacityMask { // add rounded corners to image
+            layer.effect: OpacityMask { // adds rounded corners to image
                 maskSource: Rectangle { width: rectangleProduct.width; height: rectangleProduct.height; radius: rectangleProduct.radius }
             }
 
