@@ -34,7 +34,7 @@ Label {
         x: parent.leftPadding + (parent.width - width)/2
         y: parent.topPadding  + (parent.height - height)/2
         width: parent.width
-        height: 1
+        height: ~~(priceTag.contentHeight * 0.1)
         visible: priceTag.strikeThrough
 
         gradient: Gradient {

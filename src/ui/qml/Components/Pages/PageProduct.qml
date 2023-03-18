@@ -11,6 +11,8 @@ Page {
     property alias imageSource: imageProduct.source
     property alias originalPrice: priceTagOriginal.price
     property alias offerPrice: priceTagOffer.price
+    property alias name: labelProductName.text
+    property alias description: labelProductDescription.text
 
     signal backRequested()
 
@@ -33,6 +35,16 @@ Page {
 
         fillMode: Image.PreserveAspectFit
         asynchronous: true
+
+        ParallelAnimation {
+            id: animationEnterImage
+
+            running: imageProduct.status === Image.Ready
+
+            // grow_fade_in
+            NumberAnimation { target: imageProduct; property: "scale"; from: 0.9; to: 1.0; easing.type: Easing.OutQuint; duration: 220 }
+            NumberAnimation { target: imageProduct; property: "opacity"; from: 0.0; to: 1.0; easing.type: Easing.OutCubic; duration: 150 }
+        }
     }
 
     BusyIndicator {
@@ -79,5 +91,30 @@ Page {
         font.bold: true
         font.pixelSize: ~~Qt.application.font.pixelSize * 3
         visible: price < priceTagOriginal.price
+    }
+
+    Label {
+        id: labelProductName
+
+        x: (labelOfferPercent.visible ? Math.max(labelOfferPercent.x + labelOfferPercent.width, priceTagOriginal.x + priceTagOriginal.width) : priceTagOriginal.x + priceTagOriginal.width) + 8
+        y: imageProduct.y + imageProduct.height
+        width: parent.width - x - 4
+
+        wrapMode: Label.Wrap
+        elide: Label.ElideRight
+        font.pixelSize: ~~(Qt.application.font.pixelSize * 1.6)
+        font.bold: true
+    }
+
+    Label {
+        id: labelProductDescription
+
+        x: labelProductName.x
+        y: labelProductName.y + labelProductName.height
+        width: labelProductName.width
+        height: parent.height - y
+
+        wrapMode: Label.Wrap
+        elide: Label.ElideRight
     }
 }

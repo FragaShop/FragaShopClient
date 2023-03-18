@@ -14,6 +14,8 @@ Item {
     property alias productImageSource: pageProduct.imageSource
     property alias productOriginalPrice: pageProduct.originalPrice
     property alias productOfferPrice: pageProduct.offerPrice
+    property alias productName: pageProduct.name
+    property alias productDescription: pageProduct.description
 
     signal menuRequested()
 
@@ -47,10 +49,12 @@ Item {
             applicationWindowContent.menuRequested()
         }
 
-        onProductRequested: function(imageSource, originalPrice, offerPrice) {
+        onProductRequested: function(imageSource, originalPrice, offerPrice, name, description) {
             applicationWindowContent.productImageSource = imageSource
             applicationWindowContent.productOriginalPrice = originalPrice
             applicationWindowContent.productOfferPrice = offerPrice
+            applicationWindowContent.productName = name
+            applicationWindowContent.productDescription = description
             applicationWindowContent.showProductPage()
         }
     }
