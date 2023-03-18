@@ -37,8 +37,10 @@ qt_add_qml_module(appFragaShop
 # The UI
 set(QML_UI_SOURCES
     src/ui/qml/Components/ApplicationWindowContent.qml
-    src/ui/qml/Components/ApplicationWindowHeader.qml
     src/ui/qml/Components/Pages/PageHome.qml
+    src/ui/qml/Components/Pages/PageHomeHeader.qml
+    src/ui/qml/Components/Pages/PageProduct.qml
+    src/ui/qml/Components/Pages/PageProductHeader.qml
     src/ui/qml/Components/Pages/PageTest.qml
     src/ui/qml/Components/Utils/PriceTag.qml
     src/ui/qml/Components/Controls/ComboBox.qml
