@@ -89,6 +89,8 @@ Page {
 
                 x: priceTagOriginal.x + priceTagOriginal.width
                 y: priceTagOriginal.y
+                width: visible ? contentWidth + leftPadding + rightPadding : 0
+                height: visible ? contentHeight + topPadding + bottomPadding : 0
                 leftPadding: 1
                 rightPadding: 1
 
@@ -106,6 +108,8 @@ Page {
 
                 x: priceTagOriginal.x
                 y: priceTagOriginal.y + priceTagOriginal.height - 8
+                width: visible ? contentWidth + leftPadding + rightPadding : 0
+                height: visible ? contentHeight + topPadding + bottomPadding : 0
 
                 price: Math.random() * 200
                 font.bold: true
@@ -122,7 +126,7 @@ Page {
             Label {
                 id: labelProductName
 
-                x: (labelOfferPercent.visible ? labelOfferPercent.x + labelOfferPercent.width : priceTagOriginal.x + priceTagOriginal.width) + 8
+                x: Math.max(priceTagOriginal.x + priceTagOriginal.width, labelOfferPercent.x + labelOfferPercent.width) + 8
                 y: imageProduct.y + imageProduct.height
                 width: parent.width - x - 4
 

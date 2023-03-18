@@ -20,7 +20,7 @@ Label {
         id: labelPriceTagCents
 
         x: parent.leftPadding + parent.contentWidth + 1
-        y: 2
+        y: priceTag.smallCents ? 2 : 0
         text: priceTag.priceString.split(".")[1]
         font.pixelSize: ~~(priceTag.font.pixelSize * (priceTag.smallCents ? 0.66 : 1))
     }

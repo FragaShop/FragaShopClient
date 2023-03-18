@@ -70,6 +70,8 @@ Page {
 
         x: priceTagOriginal.x + priceTagOriginal.width
         y: priceTagOriginal.y
+        width: visible ? contentWidth + leftPadding + rightPadding : 0
+        height: visible ? contentHeight + topPadding + bottomPadding : 0
         leftPadding: 1
         rightPadding: 1
 
@@ -87,16 +89,30 @@ Page {
 
         x: priceTagOriginal.x
         y: priceTagOriginal.y + priceTagOriginal.height - 8
+        width: visible ? contentWidth + leftPadding + rightPadding : 0
+        height: visible ? contentHeight + topPadding + bottomPadding : 0
 
         font.bold: true
         font.pixelSize: ~~Qt.application.font.pixelSize * 3
         visible: price < priceTagOriginal.price
     }
 
+    Button {
+        id: buttonBuy
+
+        x: priceTagOriginal.x
+        y: priceTagOffer.visible ? priceTagOffer.y + priceTagOffer.height : priceTagOriginal.y + priceTagOriginal.height
+        width: Math.max(implicitWidth, priceTagOriginal.width, (priceTagOffer.visible ? priceTagOffer.width : 0))
+
+        text: qsTr("Add to cart")
+        icon.source: "qrc:/images/icons/actions/add_to_cart.svg"
+        highlighted: true
+    }
+
     Label {
         id: labelProductName
 
-        x: (labelOfferPercent.visible ? Math.max(labelOfferPercent.x + labelOfferPercent.width, priceTagOriginal.x + priceTagOriginal.width) : priceTagOriginal.x + priceTagOriginal.width) + 8
+        x: Math.max(priceTagOriginal.x + priceTagOriginal.width, labelOfferPercent.x + labelOfferPercent.width, buttonBuy.x + buttonBuy.width) + 8
         y: imageProduct.y + imageProduct.height
         width: parent.width - x - 4
 
