@@ -16,15 +16,9 @@ ApplicationWindow {
         id: applicationWindowContent
         width: parent.width
         height: parent.height
+
+        onMenuRequested: drawerMenu.open()
     }
-
-    header: UI.ApplicationWindowHeader {
-        id: applicationWindowHeader
-
-        onMenuTriggered: {
-            drawerMenu.open()
-        }
-    } // Pane (header)
 
     Drawer {
         id: drawerMenu

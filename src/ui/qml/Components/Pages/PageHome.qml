@@ -7,6 +7,17 @@ import FragaShop.UI as UI
 Page {
     id: pageHome
 
+    signal menuRequested()
+    signal productRequested(url imageSource, real originalPrice, real offerPrice)
+
+    header: UI.PageHomeHeader {
+        id: pageHomeHeader
+
+        onMenuRequested: {
+            pageHome.menuRequested()
+        }
+    } // Pane (header)
+
     GridView {
         id: gridViewProducts
 
@@ -42,7 +53,9 @@ Page {
                 width: parent.width
                 height: 150
 
-                source: "https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(~~rectangleProduct.width).arg(~~(rectangleProduct.height * 0.8))
+                source: "https://picsum.photos/seed/%0/%1/%2".arg(~~(Math.random() * 10000)).arg(pageHome.width).arg(pageHome.width)
+                sourceSize.width: ~~rectangleProduct.width
+                sourceSize.height: ~~(rectangleProduct.height * 0.8)
                 fillMode: Image.PreserveAspectCrop
                 asynchronous: true
                 opacity: 0
@@ -81,7 +94,7 @@ Page {
 
                 text: "-" + ~~((1 - priceTagOffer.price/priceTagOriginal.price) * 100) + "%"
                 font.bold: true
-                font.pixelSize: priceTagOriginal.font.pixelSize * 0.66
+                font.pixelSize: ~~(priceTagOriginal.font.pixelSize * 0.66)
                 color: Material.dialogColor
                 visible: priceTagOffer.visible
 
@@ -115,6 +128,8 @@ Page {
                 bottomInset: 0
 
                 flat: true
+
+                onClicked: pageHome.productRequested(imageProduct.source, priceTagOriginal.price, priceTagOffer.price)
             }
         } // Rectangle (delegate)
 

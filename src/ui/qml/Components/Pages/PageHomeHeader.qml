@@ -5,9 +5,9 @@ import Qt5Compat.GraphicalEffects
 import FragaShop.UI as UI
 
 Pane {
-    id: applicationWindowHeader
+    id: applicationHomeHeader
 
-    signal menuTriggered()
+    signal menuRequested()
 
     height: toolButtonFilter.y + flickableFilters.height + 1
     padding: 0
@@ -20,7 +20,7 @@ Pane {
         icon.source: "qrc:/images/icons/menu/menu.svg"
         icon.color: rectangleSearch.width > (textFieldSearch.width + width)*2 ? Material.dialogColor : Material.foreground
         onClicked: {
-            applicationWindowHeader.menuTriggered()
+            applicationHomeHeader.menuRequested()
         }
     }
 
@@ -41,7 +41,7 @@ Pane {
 
     Item {
         id: itemSearchClip
-        width: applicationWindowHeader.width
+        width: applicationHomeHeader.width
         height: toolButtonFilter.y
         clip: true
 
@@ -63,7 +63,7 @@ Pane {
 
                 x: parent.width/2 - width - toolButtonSearch.width/2
                 y: (parent.height - height)/2 + 4
-                width: applicationWindowHeader.width - (2 * toolButtonSearch.width)
+                width: applicationHomeHeader.width - (2 * toolButtonSearch.width)
 
                 enabled: toolButtonSearch.checked && parent.width > toolButtonSearch.width
                 color: Material.dialogColor
