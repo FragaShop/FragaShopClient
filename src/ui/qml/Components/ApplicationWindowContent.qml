@@ -7,7 +7,7 @@ import FragaShop.UI as UI
 Item {
     id: applicationWindowContent
 
-    enum AvailablePages { HomePage, TestPage }
+    enum AvailablePages { HomePage, ProductPage, TestPage }
 
     property int currentPage: ApplicationWindowContent.AvailablePages.HomePage
 
