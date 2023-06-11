@@ -1,3 +1,4 @@
+import QtCore
 import QtQuick
 import QtQuick.Controls.Material
 import Qt5Compat.GraphicalEffects
@@ -11,30 +12,39 @@ ApplicationWindow {
     height: 654
     visible: true
     title: Qt.application.name
+    Material.theme: settings.theme
+    Material.accent: settings.accent
+
+    Settings {
+        id: settings
+
+        property int theme: Material.System
+        property int accent: Material.Blue
+    }
 
     UI.ApplicationWindowContent {
         id: applicationWindowContent
         width: parent.width
         height: parent.height
 
-        onMenuRequested: drawerMenu.open()
+        onMenuRequested: applicationMenu.open()
     }
 
-    Drawer {
-        id: drawerMenu
+    UI.ApplicationMenu {
+        id: applicationMenu
 
         width: 0.66 * applicationWindow.width
         height: applicationWindow.height
-
         modal: true
 
-        Label {
-            x: (parent.width - width)/2
-            y: (parent.height - height)/2
-
-            text: qsTr("Nothing to see here")
+        onThemeChangeRequested: {
+            settings.theme = applicationWindow.Material.theme === Material.Light ? Material.Dark : Material.Light
         }
-    }
+
+        onAccentColorChangeRequested: function (accentColor) {
+            settings.accent = accentColor
+        }
+    } // Drawer (menu)
 
     FastBlur {
         id: fastBlurEffect

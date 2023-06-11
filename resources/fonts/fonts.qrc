@@ -1,6 +1,10 @@
 <RCC>
     <qresource prefix="/fonts">
-        <file>dancing-script/dancing-script-regular.ttf</file>
         <file>code-new-roman/code-new-roman.otf</file>
+        <file>dancing-script/dancing-script-regular.ttf</file>
+        <file>didot/didot-bold.ttf</file>
+        <file>didot/didot-bold-italic.ttf</file>
+        <file>didot/didot-italic.ttf</file>
+        <file>didot/didot-regular.ttf</file>
     </qresource>
 </RCC>

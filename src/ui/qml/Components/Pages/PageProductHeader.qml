@@ -16,14 +16,14 @@ Item {
         width: toolButtonBack.width - toolButtonBack.leftPadding - toolButtonBack.rightPadding
         height: width
         radius: width/2
-        color: "#70000000"
+        color: toolButtonBack.Material.theme === Material.Dark ? "#70ffffff" : "#70000000"
     }
 
     ToolButton {
         id: toolButtonBack
 
-        icon.source: "qrc:/images/icons/arrows/arrow_back.svg"
-        icon.color: "white"
+        icon.source: "qrc:/images/icons/arrows/arrow_go_back.svg"
+        icon.color: toolButtonBack.Material.backgroundColor
         onClicked: {
             applicationProductHeader.backRequested()
         }

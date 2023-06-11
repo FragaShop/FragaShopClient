@@ -3,14 +3,16 @@
         <file>icons/app/appIcon.png</file>
         <file>icons/app/appIcon.svg</file>
         <file>icons/app/appIcon_small.png</file>
-        <file>icons/menu/menu.svg</file>
-        <file>icons/actions/filter.svg</file>
-        <file>icons/actions/search.svg</file>
         <file>icons/actions/add_to_cart.svg</file>
         <file>icons/actions/clear.svg</file>
-        <file>icons/arrows/chevron_more.svg</file>
+        <file>icons/actions/filter.svg</file>
+        <file>icons/actions/search.svg</file>
+        <file>icons/arrows/arrow_drop_down.svg</file>
+        <file>icons/arrows/arrow_drop_up.svg</file>
+        <file>icons/arrows/arrow_go_back.svg</file>
+        <file>icons/arrows/arrow_go_forward.svg</file>
         <file>icons/arrows/chevron_less.svg</file>
-        <file>icons/arrows/arrow_back.svg</file>
+        <file>icons/arrows/chevron_more.svg</file>
         <file>icons/fashion/blouse.svg</file>
         <file>icons/fashion/blouse-sleeves.svg</file>
         <file>icons/fashion/boots.svg</file>
@@ -39,5 +41,35 @@
         <file>icons/fashion/tennis.svg</file>
         <file>icons/fashion/tie.svg</file>
         <file>icons/fashion/underpants.svg</file>
+        <file>icons/fashion/dark/blouse.svg</file>
+        <file>icons/fashion/dark/blouse-sleeves.svg</file>
+        <file>icons/fashion/dark/boots.svg</file>
+        <file>icons/fashion/dark/bra.svg</file>
+        <file>icons/fashion/dark/cap.svg</file>
+        <file>icons/fashion/dark/coat.svg</file>
+        <file>icons/fashion/dark/coat-hooded.svg</file>
+        <file>icons/fashion/dark/dress.svg</file>
+        <file>icons/fashion/dark/dress-sleeves.svg</file>
+        <file>icons/fashion/dark/flipflops.svg</file>
+        <file>icons/fashion/dark/glasses.svg</file>
+        <file>icons/fashion/dark/hat-men.svg</file>
+        <file>icons/fashion/dark/hat-winter.svg</file>
+        <file>icons/fashion/dark/hat-women.svg</file>
+        <file>icons/fashion/dark/heels.svg</file>
+        <file>icons/fashion/dark/pants.svg</file>
+        <file>icons/fashion/dark/pullover.svg</file>
+        <file>icons/fashion/dark/purse.svg</file>
+        <file>icons/fashion/dark/shirt-sleeves.svg</file>
+        <file>icons/fashion/dark/shoes.svg</file>
+        <file>icons/fashion/dark/shorts.svg</file>
+        <file>icons/fashion/dark/shorts-swimming.svg</file>
+        <file>icons/fashion/dark/suit.svg</file>
+        <file>icons/fashion/dark/suitcase.svg</file>
+        <file>icons/fashion/dark/sweater.svg</file>
+        <file>icons/fashion/dark/tennis.svg</file>
+        <file>icons/fashion/dark/tie.svg</file>
+        <file>icons/fashion/dark/underpants.svg</file>
+        <file>icons/menu/menu.svg</file>
+        <file>icons/menu/night_mode.svg</file>
     </qresource>
 </RCC>

@@ -32,8 +32,9 @@ Pane {
         height: toolButtonMenu.height
         verticalAlignment: Label.AlignVCenter
 
-        text: qsTr(Qt.application.name)
-        font.family: "Dancing Script"
+        text: "Fragashop"
+        font.family: "Didot"
+        font.italic: true
         font.pointSize: Qt.application.font.pointSize * 20
         fontSizeMode: Label.Fit
         elide: Label.ElideRight
@@ -55,7 +56,7 @@ Pane {
             height: width
             radius: width/2
 
-            color: Material.accentColor
+            color: applicationHomeHeader.Material.accentColor
             clip: true
 
             TextField {
@@ -109,19 +110,19 @@ Pane {
             orientation: Gradient.Horizontal
             GradientStop {
                 position: 0.00;
-                color: rectangleSeparator.leftTransparent ? "transparent" : (rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor)
+                color: rectangleSeparator.leftTransparent ? "transparent" : (rectangleSeparator.enabled ? applicationHomeHeader.Material.foreground : applicationHomeHeader.Material.hintTextColor)
             }
             GradientStop {
                 position: 0.25;
-                color: rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor
+                color: rectangleSeparator.enabled ? applicationHomeHeader.Material.foreground : applicationHomeHeader.Material.hintTextColor
             }
             GradientStop {
                 position: 0.75;
-                color: rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor
+                color: rectangleSeparator.enabled ? applicationHomeHeader.Material.foreground : applicationHomeHeader.Material.hintTextColor
             }
             GradientStop {
                 position: 1.00;
-                color: rectangleSeparator.rightTransparent ? "transparent" : (rectangleSeparator.enabled ? Material.foreground : Material.hintTextColor)
+                color: rectangleSeparator.rightTransparent ? "transparent" : (rectangleSeparator.enabled ? applicationHomeHeader.Material.foreground : applicationHomeHeader.Material.hintTextColor)
             }
         } // Gradient
     } // Rectangle
@@ -156,7 +157,7 @@ Pane {
             }
             GradientStop {
                 position: 0.35;
-                color: Material.backgroundColor
+                color: applicationHomeHeader.Material.backgroundColor
             }
         } // Gradient
     }
@@ -198,7 +199,7 @@ Pane {
                         id: imageFilterIcon
                         x: 4
                         y: (parent.height - height)/2
-                        source: model.icon
+                        source: applicationHomeHeader.Material.theme === Material.Dark ? model.icon.replace("fashion", "fashion/dark") : model.icon
                         sourceSize: "32x32"
                     }
 
@@ -208,7 +209,7 @@ Pane {
                         width: imageFilterIcon.width
                         height: imageFilterIcon.height
                         source: imageFilterIcon
-                        color: Material.accentColor
+                        color: applicationHomeHeader.Material.accentColor
                         opacity: toolButtonDelegate.checked ? 0.4 : 0.0
                     }
 
@@ -217,7 +218,7 @@ Pane {
                         x: imageFilterIcon.x + imageFilterIcon.width + 4
                         y: imageFilterIcon.y + (imageFilterIcon.height - height)/2
                         text: model.name
-                        color: toolButtonDelegate.checked ? Material.accentColor : Material.primaryTextColor
+                        color: toolButtonDelegate.checked ? applicationHomeHeader.Material.accentColor : applicationHomeHeader.Material.primaryTextColor
                     }
                 } // ToolButton (delegate)
             } // Repeater

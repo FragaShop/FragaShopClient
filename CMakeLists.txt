@@ -7,7 +7,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_ANDROID_BUILD_ALL_ABIS ON)
 
-find_package(Qt6 6.4 COMPONENTS Quick Svg REQUIRED)
+find_package(Qt6 6.5 COMPONENTS Quick Svg REQUIRED)
 
 # The C/C++ source files
 set(PROJECT_SOURCES
@@ -37,23 +37,24 @@ qt_add_qml_module(appFragaShop
 # The UI
 set(QML_UI_SOURCES
     src/ui/qml/Components/ApplicationWindowContent.qml
+    src/ui/qml/Components/ApplicationMenu.qml
     src/ui/qml/Components/Pages/PageHome.qml
     src/ui/qml/Components/Pages/PageHomeHeader.qml
     src/ui/qml/Components/Pages/PageProduct.qml
     src/ui/qml/Components/Pages/PageProductHeader.qml
     src/ui/qml/Components/Pages/PageTest.qml
     src/ui/qml/Components/Utils/PriceTag.qml
-    src/ui/qml/Components/Controls/ComboBox.qml
-    src/ui/qml/Components/Controls/RadioButton.qml
-    src/ui/qml/Components/Controls/ScrollBar.qml
-    src/ui/qml/Components/Controls/TextArea.qml
-    src/ui/qml/Components/Controls/TextField.qml
-    src/ui/qml/Components/Controls/+Material/ComboBox.qml
-    src/ui/qml/Components/Controls/+Material/RadioButton.qml
-    src/ui/qml/Components/Controls/+Material/RadioIndicator.qml
-    src/ui/qml/Components/Controls/+Material/ScrollBar.qml
-    src/ui/qml/Components/Controls/+Material/TextArea.qml
-    src/ui/qml/Components/Controls/+Material/TextField.qml
+    src/ui/qml/Components/QuickControls/ComboBox.qml
+    src/ui/qml/Components/QuickControls/RadioButton.qml
+    src/ui/qml/Components/QuickControls/ScrollBar.qml
+    src/ui/qml/Components/QuickControls/TextArea.qml
+    src/ui/qml/Components/QuickControls/TextField.qml
+    src/ui/qml/Components/QuickControls/+Material/ComboBox.qml
+    src/ui/qml/Components/QuickControls/+Material/RadioButton.qml
+    src/ui/qml/Components/QuickControls/+Material/RadioIndicator.qml
+    src/ui/qml/Components/QuickControls/+Material/ScrollBar.qml
+    src/ui/qml/Components/QuickControls/+Material/TextArea.qml
+    src/ui/qml/Components/QuickControls/+Material/TextField.qml
 )
 
 

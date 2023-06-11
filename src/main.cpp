@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     app.setApplicationVersion("0.1.0");
     app.setWindowIcon(QIcon(":/images/icons/app/appIcon.png")); // svg
 
-    QFontDatabase::addApplicationFont(":/fonts/dancing-script/dancing-script-regular.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/didot/didot-italic.ttf");
     QFontDatabase::addApplicationFont(":/fonts/code-new-roman/code-new-roman.otf");
 
     QTranslator translator;

@@ -158,6 +158,7 @@ Page {
                 height: parent.height
                 topInset: 0
                 bottomInset: 0
+                Material.roundedScale: Material.NotRounded
 
                 flat: true
 

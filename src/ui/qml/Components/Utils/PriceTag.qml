@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Controls
 import QtQuick.Controls.Material
 
 Label {
@@ -45,11 +44,11 @@ Label {
             }
             GradientStop {
                 position: 0.2;
-                color: priceTag.enabled ? Material.foreground : Material.hintTextColor
+                color: priceTag.enabled ? priceTag.Material.foreground : priceTag.Material.hintTextColor
             }
             GradientStop {
                 position: 0.8;
-                color: priceTag.enabled ? Material.foreground : Material.hintTextColor
+                color: priceTag.enabled ? priceTag.Material.foreground : priceTag.Material.hintTextColor
             }
             GradientStop {
                 position: 1.00;
